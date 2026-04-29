@@ -51,6 +51,27 @@
         <div id="__next">
             <main class="Home_main__EtNt2 __className_d9825c">
                 <div class="Home_hover-div__2Mvhz" style="background:radial-gradient(600px at 0 0, rgba(29, 78, 216, 0.15), transparent 80%)"></div>
+                <script>
+                const hoverDiv = document.querySelector('.Home_hover-div__2Mvhz');
+                const man = document.querySelector('.Home_main__EtNt2');
+
+                main.addEventListener('mousemove', (e) => {
+                    const rect = main.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    hoverDiv.style.background = `radial-gradient(
+        600px at ${x}px ${y}px,
+        rgba(27, 75, 208, 0.15),
+        transparent 80%
+      )`;
+                    hoverDiv.style.opacity = 1;
+                });
+
+                main.addEventListener('mouseleave', () => {
+                    hoverDiv.style.opacity = 0; // fade out when leaving
+                });
+            </script>
                 <div class="Home_wrapper__M2hGM">
                     <div class="Home_lg__flex__JoJYF">
 
